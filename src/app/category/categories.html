@@ -1,0 +1,8 @@
+<header-navbar></header-navbar>
+
+<h1>Categories</h1>
+<ul>
+  <li *ngFor="let cat of categories">
+    <category [item]="cat"></category>
+  </li>
+</ul>
