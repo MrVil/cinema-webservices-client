@@ -1,8 +1,21 @@
 <header-navbar></header-navbar>
 
-<h1>Actors</h1>
-<ul>
-  <li *ngFor="let act of actors">
-    <actor [item]="act"></actor>
-  </li>
-</ul>
+<div class="container">
+  <h1>Actors</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Modify</th>
+        <th>Erase</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let act of actors">
+        <td>{{act.name}}</td>
+        <td><button class="btn btn-primary"><span class="fa fa-pencil"></span></button></td>
+        <td><button class="btn btn-danger"> <span class="fa fa-eraser"></span></button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

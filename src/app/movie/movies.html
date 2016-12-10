@@ -1,8 +1,22 @@
 <header-navbar></header-navbar>
 
-<h1>Movies</h1>
-<ul>
-  <li *ngFor="let mov of movies">
-    <movie [item]="mov"></movie>
-  </li>
-</ul>
+<div class="container">
+  <h1>Movies</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Modify</th>
+        <th>Erase</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let mov of movies">
+        <td>{{mov.title}}</td>
+        <td><button class="btn btn-primary"><span class="fa fa-pencil"></span></button></td>
+        <td><button class="btn btn-danger"> <span class="fa fa-eraser"></span></button></td>
+        <!--<movie [item]="mov"></movie>-->
+      </tr>
+    </tbody>
+  </table>
+</div>

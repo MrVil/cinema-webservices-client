@@ -14,7 +14,6 @@ import {MoviesComponent} from './movie/movies.component';
 import {MovieComponent} from './movie/movie.component';
 
 
-
 @NgModule({
   imports: [
     BrowserModule,
