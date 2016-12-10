@@ -1,3 +1,20 @@
 body {
   background-color: lightgrey;
 }
+
+.item-cat {
+  background-size: cover;
+  background-image: url(http://www.animaatjes.de/wallpapers/wallpapers/horror/wallpaper_horror_animaatjes-44.jpg);
+  float: left;
+  width: 30%;
+  // padding: .75rem;
+  margin: 1rem;
+  border: 0; 
+  border-radius: 5px;
+}
+
+.item-cat:before{
+	content: "";
+	display: block;
+	padding-top: 90%; 	/* initial ratio of 1:1*/
+}

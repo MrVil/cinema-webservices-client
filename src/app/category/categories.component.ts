@@ -14,7 +14,6 @@ export class CategoriesComponent {
   constructor(private categoryService: CategoryService){
     this.categoryService.findCategories().subscribe(
       categories => {
-        console.log(categories);
         categories.forEach(category => {
           this.categories.push(category);
         });
