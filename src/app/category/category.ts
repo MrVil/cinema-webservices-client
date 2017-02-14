@@ -1,9 +1,10 @@
 
 export class Category {
-  public name: String = 'Default Category';
+  public labelCat: String;
+  public id: number;
 
-  constructor(name:String){
-    this.name = name;
+  constructor(name: String){
+    this.labelCat = name;
   }
 
 }
