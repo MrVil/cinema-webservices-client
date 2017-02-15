@@ -2,5 +2,9 @@
 
 <section class="container">
   <h1>Categories</h1>
-  <category *ngFor="let cat of categories" [item]="cat"></category>
+  <article *ngFor="let cat of categories; let i = index" class="item-cat hvr-grow-shadow">
+    <a href="categories/{{i}}" data-toggle="modal" data-target="horror" class="text-center">
+      <h2>{{cat.labelCat}}</h2>
+    </a>
+  </article>
 </section>
