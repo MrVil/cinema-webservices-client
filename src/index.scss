@@ -19,6 +19,17 @@ body {
 	padding-top: 90%; 	/* initial ratio of 1:1*/
 }
 
-.item-cat > a h2 {
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 
+h1.mvs-header {
+  font-family: 'Permanent Marker', cursive;
+  color: #1e5466;
+  background-color: #ff6161;;
+  width: 100%;
+  padding: 0.5em;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px darkgrey;
+  border: #1e5466;
+  border-width: 5px;
+  border-style: solid;
 }
