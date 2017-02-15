@@ -27,11 +27,4 @@ export class MovieComponent implements OnInit {
       error => this.errorMessage = <any>error);
   }
 
-  delete_btn_clicked() {
-    /*console.log(event);
-    this.movieService.deleteMovie(event);
-    window.location.reload();
-    */
-  }
-
 }
