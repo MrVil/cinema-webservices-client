@@ -6,6 +6,7 @@ import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
 import {CategoriesComponent} from './category/categories.component';
 import {CategoryComponent} from './category/category.component';
+import {CreateCategoryComponent} from './category/create-category.component';
 import {ActorsComponent} from './actor/actors.component';
 import {MoviesComponent} from './movie/movies.component';
 
@@ -25,6 +26,9 @@ export const routes: Routes = [
   }, {
     path: 'categories/:id',
     component: CategoryComponent
+  }, {
+    path: 'create',
+    component: CreateCategoryComponent
   }, {
     path: 'movies',
     component: MoviesComponent

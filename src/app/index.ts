@@ -9,6 +9,7 @@ import {NavbarComponent} from './navbar/navbar.component';
 import {FooterComponent} from './footer/footer.component';
 import {CategoriesComponent} from './category/categories.component';
 import {CategoryComponent} from './category/category.component';
+import {CreateCategoryComponent} from './category/create-category.component';
 import {ActorsComponent} from './actor/actors.component';
 import {ActorComponent} from './actor/actor.component';
 import {MoviesComponent} from './movie/movies.component';
@@ -32,6 +33,7 @@ import {MovieService} from './movie/movie.service';
     FooterComponent,
     CategoriesComponent,
     CategoryComponent,
+    CreateCategoryComponent,
     ActorsComponent,
     ActorComponent,
     MoviesComponent,
