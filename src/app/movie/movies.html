@@ -14,7 +14,7 @@
       <tr *ngFor="let mov of movies">
         <td>{{mov.title}}</td>
         <td><button class="btn btn-primary"><span class="fa fa-pencil"></span></button></td>
-        <td><button class="btn btn-danger"> <span class="fa fa-eraser"></span></button></td>
+        <td><button class="btn btn-danger" (click)="delete_btn_clicked()"><span class="fa fa-eraser"></span></button></td>
         <!--<movie [item]="mov"></movie>-->
       </tr>
     </tbody>

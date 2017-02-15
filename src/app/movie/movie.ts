@@ -8,6 +8,11 @@ export class Movie {
   public length: number;
   public releaseDate: String;
   public category: Category;
+  public _links: {
+      self: {
+          href: string
+      }
+  };
 
 
   constructor(title: String) {

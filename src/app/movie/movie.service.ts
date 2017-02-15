@@ -10,7 +10,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class MovieService {
 
-  private moviesUrl = 'http://localhost/api/movie';  // URL to web API
+  private moviesUrl = 'http://localhost:8080/api/movie';  // URL to web API
 
   constructor (private http: Http) {}
 
@@ -18,6 +18,10 @@ export class MovieService {
     return this.http.get(this.moviesUrl)
                     .map(this.extractData)
                     .catch(this.handleError);
+  }
+
+  deleteMovie (mov: Movie) {
+      return this.http.delete(mov._links.self.href);
   }
 
   private extractData(res: Response) {
