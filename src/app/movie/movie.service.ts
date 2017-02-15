@@ -1,16 +1,46 @@
 import {Movie} from './movie';
-import {Observable} from 'rxjs/Rx';
+import {Observable} from 'rxjs/Observable';
 
+import { Injectable }              from '@angular/core';
+import { Http, Response }          from '@angular/http';
+
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+
+@Injectable()
 export class MovieService {
-  findMovies(): Observable<Movie[]>{
-    return Observable.of([
-      new Movie('Star Wars episode I'),
-      new Movie('Star Wars episode II'),
-      new Movie('Star Wars episode III'),
-      new Movie('Star Wars episode IV'),
-      new Movie('Star Wars episode V'),
-      new Movie('Star Wars episode VI'),
-      new Movie('Star Wars episode VII')
-    ]);
+
+  private moviesUrl = 'http://localhost/api/movie';  // URL to web API
+
+  constructor (private http: Http) {}
+
+  getMovies (): Observable<Movie[]> {
+    return this.http.get(this.moviesUrl)
+                    .map(this.extractData)
+                    .catch(this.handleError);
+  }
+
+  private extractData(res: Response) {
+    let body = res.json();
+    console.log(res);
+    console.log(body);
+    return body._embedded.Movie || { };
+  }
+
+  private handleError (error: Response | any) {
+    // In a real world app, we might use a remote logging infrastructure
+    let errMsg: string;
+
+    if (error instanceof Response) {
+      const body = error.json() || '';
+      const err = body.error || JSON.stringify(body);
+      errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+    } else {
+      errMsg = error.message ? error.message : error.toString();
+    }
+
+    console.error(errMsg);
+
+    return Observable.throw(errMsg);
   }
 }
