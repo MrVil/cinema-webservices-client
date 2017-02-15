@@ -24,11 +24,11 @@ export const routes: Routes = [
     path: 'categories',
     component: CategoriesComponent
   }, {
+    path: 'categories/create',
+    component: CreateCategoryComponent
+  }, {
     path: 'categories/:id',
     component: CategoryComponent
-  }, {
-    path: 'create',
-    component: CreateCategoryComponent
   }, {
     path: 'movies',
     component: MoviesComponent

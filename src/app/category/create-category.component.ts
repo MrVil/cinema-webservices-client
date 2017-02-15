@@ -1,10 +1,11 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Category} from './category';
 
 @Component({
-  selector: 'create-category',
+  selector: 'fountain-create-category',
   template: require('./create-category.html')
 })
 
 export class CreateCategoryComponent {
-    constructor(private location: Location) {}
+  @Input() category: Category;
 }
