@@ -3,7 +3,7 @@ import {Category} from './category';
 import {CategoryService} from './category.service';
 
 @Component({
-  selector: 'categories',
+  selector: 'fountain-categories',
   template: require('./categories.html'),
   providers: [CategoryService]
 })
