@@ -17,8 +17,8 @@
         <td>{{act.lastNameAct}}</td>
         <td>{{act.birthDate}}</td>
         <td>{{act.deathDate}}</td>
-        <td><button class="btn btn-primary"><span class="fa fa-pencil"></span></button></td>
-        <td><button class="btn btn-danger"> <span class="fa fa-eraser"></span></button></td>
+        <td><button class="btn btn-primary" (click)="editActor(act)"><span class="fa fa-pencil"></span></button></td>
+        <td><button class="btn btn-danger" (click)="removeActor(act)"> <span class="fa fa-eraser"></span></button></td>
       </tr>
     </tbody>
   </table>

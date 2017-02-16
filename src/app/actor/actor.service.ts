@@ -24,7 +24,7 @@ export class ActorService {
 
   constructor (private http: Http) {}
 
-  getactors(): Observable<Actor[]> {
+  getActors(): Observable<Actor[]> {
     return this.http.get(this.actorsUrl)
       .map(this.extractData)
       .catch(this.handleError);
@@ -38,6 +38,11 @@ export class ActorService {
     return this.http.post(this.actorsUrl, JSON.stringify(actor), options)
       .map(this.extractData)
       .catch(this.handleError);
+  }
+
+  deleteActor (act: Actor) {
+    console.log(`${act._links.self.href}`);
+    return this.http.delete(`${act._links.self.href}`).subscribe((res) =>{});
   }
 
   private extractData(res: Response) {

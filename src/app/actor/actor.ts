@@ -6,12 +6,17 @@ export class Actor {
   public birthDate: String;
   public deathDate: String;
   public id: number;
+  public _links: {
+    self: {
+      href: string
+    }
+  };
 
-
-  constructor(lastNameAct: String,firstNameAct: String,birthDate: String,deathDate: String ) {
+  constructor(id: number,lastNameAct: String,firstNameAct: String,birthDate: String,deathDate: String) {
     this.lastNameAct = lastNameAct;
     this.firstNameAct = firstNameAct;
     this.birthDate = birthDate;
     this.deathDate = deathDate;
+    this.id = id;
   }
 }
