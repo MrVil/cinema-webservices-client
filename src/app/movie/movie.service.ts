@@ -22,7 +22,7 @@ export class MovieService {
 
   deleteMovie (mov: Movie) {
       console.log(mov._links.self.href);
-      return this.http.delete(mov._links.self.href);
+      return this.http.delete(mov._links.self.href).subscribe((res) =>{});
   }
 
   private extractData(res: Response) {
