@@ -9,8 +9,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let mov of movies">
-        <td>{{mov.title}}</td>
+      <tr *ngFor="let mov of movies; let i = index">
+        <td><a href="movie/{{mov}}">{{mov.title}}</a></td>
         <td><button class="btn btn-primary"><span class="fa fa-pencil"></span></button></td>
         <td><button class="btn btn-danger" (click)="delete_btn_clicked(mov)"><span class="fa fa-eraser"></span></button></td>
         <!--<movie [item]="mov"></movie>-->
