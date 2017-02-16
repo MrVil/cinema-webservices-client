@@ -10,7 +10,7 @@ import { Category } from './category';
 @Injectable()
 export class CategoryService {
 
-  private categoriesUrl = 'http://localhost/api/category';  // URL to web API
+  private categoriesUrl = 'http://localhost/api/category';  // url to web API
 
   constructor (private http: Http) {}
 
@@ -28,7 +28,7 @@ export class CategoryService {
   }
 
   private handleError (error: Response | any) {
-    // In a real world app, we might use a remote logging infrastructure
+    // in a real world app, we might use a remote logging infrastructure
     let errMsg: string;
 
     if (error instanceof Response) {

@@ -1,8 +1,8 @@
 import {Component, Input} from '@angular/core';
-import {Actor} from './actor'
+import {Actor} from './actor';
 
 @Component({
-  selector: 'actor',
+  selector: 'fountain-actor',
   template: require('./actor.html')
 })
 

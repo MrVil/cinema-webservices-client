@@ -3,8 +3,8 @@ import {Movie} from './movie';
 import {MovieService} from './movie.service';
 
 @Component({
-  selector: 'movies',
-  template: require('./movies.html'),
+  selector: 'fountain-movie',
+  template: require('./movie.html'),
   providers: [MovieService]
 })
 

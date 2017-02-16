@@ -2,8 +2,7 @@
 export class Actor {
   public name: String = 'Unknow';
 
-  constructor(name:String){
+  constructor(name: String) {
     this.name = name;
   }
-
 }

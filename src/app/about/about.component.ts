@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 @Component({
-  selector: 'about',
+  selector: 'fountain-about',
   template: require('./about.html')
 })
 export class AboutComponent {}

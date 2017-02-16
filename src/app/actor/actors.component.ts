@@ -3,15 +3,15 @@ import {Actor} from './actor';
 import {ActorService} from './actor.service';
 
 @Component({
-  selector: 'actors',
+  selector: 'fountain-actors',
   template: require('./actors.html'),
   providers: [ActorService]
 })
 
 export class ActorsComponent {
-  actors:Actor[] = [];
+  actors: Actor[] = [];
 
-  constructor(private actorService: ActorService){
+  constructor(private actorService: ActorService) {
     this.actorService.findActors().subscribe(
       actors => {
         actors.forEach(actor => {
