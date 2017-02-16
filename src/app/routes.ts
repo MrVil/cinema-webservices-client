@@ -9,6 +9,7 @@ import {CategoryComponent} from './category/category.component';
 import {CreateCategoryComponent} from './category/create-category.component';
 import {ActorsComponent} from './actor/actors.component';
 import {MoviesComponent} from './movie/movies.component';
+import {CreateActorComponent} from './actor/create-actor-component';
 
 @Component({
   selector: 'fountain-root',
@@ -35,6 +36,9 @@ export const routes: Routes = [
   }, {
     path: 'actors',
     component: ActorsComponent
+  }, {
+    path: 'actors/create',
+    component: CreateActorComponent
   }, {
     path: 'about',
     component: AboutComponent

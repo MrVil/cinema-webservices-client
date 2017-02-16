@@ -12,11 +12,10 @@ export class Actor {
     }
   };
 
-  constructor(id: number,lastNameAct: String,firstNameAct: String,birthDate: String,deathDate: String) {
+  constructor(lastNameAct: String,firstNameAct: String,birthDate: String,deathDate: String) {
     this.lastNameAct = lastNameAct;
     this.firstNameAct = firstNameAct;
     this.birthDate = birthDate;
     this.deathDate = deathDate;
-    this.id = id;
   }
 }
