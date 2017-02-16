@@ -3,14 +3,20 @@
   <table class="table">
     <thead>
       <tr>
-        <th>Name</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Birth Date</th>
+        <th>Death Date</th>
         <th>Modify</th>
         <th>Erase</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let act of actors">
-        <td>{{act.name}}</td>
+        <td>{{act.firstNameAct}}</td>
+        <td>{{act.lastNameAct}}</td>
+        <td>{{act.birthDate}}</td>
+        <td>{{act.deathDate}}</td>
         <td><button class="btn btn-primary"><span class="fa fa-pencil"></span></button></td>
         <td><button class="btn btn-danger"> <span class="fa fa-eraser"></span></button></td>
       </tr>

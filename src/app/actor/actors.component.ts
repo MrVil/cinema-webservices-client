@@ -12,7 +12,7 @@ export class ActorsComponent {
   actors: Actor[] = [];
 
   constructor(private actorService: ActorService) {
-    this.actorService.findActors().subscribe(
+    this.actorService.getactors().subscribe(
       actors => {
         actors.forEach(actor => {
           this.actors.push(actor);
