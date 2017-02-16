@@ -1,12 +1,12 @@
 <section class="container">
     <div class="row">
         <h1 class="text-center mvs-header">Create a category</h1>
+        <br>
         <div class="input-group">
             <span class="input-group-addon">Category's label</span>
-            <input type="text" class="form-control" value="{{category.labelCat}}">
+            <input type="text" class="form-control" [(ngModel)]="category.labelCat">
         </div>
+        <br>
         <button type="button" class="btn btn-primary text-center" (click)="onCreateClicked()">Create !</button>
     </div>
 </section>
-
-<p>{{errorMessage}}</p>

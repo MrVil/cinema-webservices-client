@@ -22,7 +22,6 @@ export class CategoryService {
   }
 
   create(category: Category): Observable<Category> {
-    console.log('Service called !');
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
@@ -31,10 +30,14 @@ export class CategoryService {
                     .catch(this.handleError);
   }
 
+  delete(link: string): Observable<Category> {
+    return this.http.delete(link)
+                    .map(this.extractData)
+                    .catch(this.handleError);
+  }
+
   private extractData(res: Response) {
     let body = res.json();
-    console.log(res);
-    console.log(body);
     return body._embedded.Category || { };
   }
 

@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {routing, RootComponent} from './routes';
 import {HttpModule}    from '@angular/http';
+import {FormsModule}   from '@angular/forms';
 
 import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
@@ -22,6 +23,7 @@ import {MovieService} from './movie/movie.service';
 @NgModule({
   imports: [
     BrowserModule,
+    FormsModule,
     HttpModule,
     routing
   ],

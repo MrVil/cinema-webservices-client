@@ -9,14 +9,25 @@ import {CategoryService} from './category.service';
 })
 
 export class CreateCategoryComponent {
-  @Input() category: Category = new Category('Default');
+  public category: Category;
   errorMessage: String;
 
-  constructor(private categoryService: CategoryService) {}
+  constructor(private categoryService: CategoryService) {
+    this.category = new Category('Default');
+  }
 
   onCreateClicked() {
     this.categoryService.create(this.category).subscribe(
-                     category  => this.category = category,
-                     error =>  this.errorMessage = <any>error);
+                     category  => this.onCategoryCreated(category),
+                     error =>  this.onCreationError(error));
+  }
+
+  onCategoryCreated(data: any) {
+    window.location.href = '/categories';
+  }
+
+  onCreationError(error: any) {
+    this.errorMessage = <any>error;
+    window.location.href = '/categories';
   }
 }
