@@ -2,7 +2,7 @@ body {
   background-color: lightgrey;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+@import url('http://www.cinemasgaumontpathe.com/upload/contenus/00000013.jpg');
 
 h1.mvs-header {
   font-family: 'Permanent Marker', cursive;
@@ -15,4 +15,14 @@ h1.mvs-header {
   border: #1e5466;
   border-width: 5px;
   border-style: solid;
+}
+
+.container {
+  background-color: rgba(255,255,255,0.8);
+  padding: 50px; 
+}
+
+body {
+  background-image: url("http://www.infoscenariodepersonne.com/images/salle-de-cinema-le-cinema-de-Personne-1320.png");
+  background-size: cover;
 }

@@ -1,6 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Category} from './category';
 import {CategoryService} from './category.service';
+import {Movie} from '../movie/movie';
+import {MovieService} from '../movie/movie.service';
 import {ActivatedRoute, Params} from '@angular/router';
 import {Location} from '@angular/common';
 import 'rxjs/add/operator/switchMap';
@@ -13,9 +15,11 @@ import 'rxjs/add/operator/switchMap';
 
 export class CategoryComponent implements OnInit {
   category: Category = new Category('');
+  movies: Movie[] = [];
 
   constructor(
     private categoryService: CategoryService,
+    private movieService: MovieService,
     private route: ActivatedRoute,
     private location: Location
   ) {}
@@ -24,8 +28,17 @@ export class CategoryComponent implements OnInit {
     this.route.params
         // tslint:disable-next-line:no-string-literal
         .switchMap((params: Params) => this.categoryService.getCategory(+params['id']))
-        .subscribe(category => this.category = category);
+        .subscribe(category => this.onCategoryGet(category));
+  }
 
+  onCategoryGet(category: Category) {
+    this.category = category;
+    this.movieService.getMoviesByUrl(this.category._links.movies.href)
+      .subscribe(movies => this.onMoviesGet(movies));
+  }
+
+  onMoviesGet(movies: Movie[]) {
+    this.movies = movies;
   }
 
   onSaveClicked() {

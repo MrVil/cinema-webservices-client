@@ -9,4 +9,27 @@
         <br>
         <button type="button" class="btn btn-primary text-center" (click)="onSaveClicked()">Save !</button>
     </div>
+    <br>
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Budget</th>
+                    <th>Income</th>
+                    <th>Lenght</th>
+                    <th>Release date</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let mov of movies">
+                <td><a href="movie/{{mov}}">{{mov.title}}</a></td>
+                <td>{{mov.budget}}</td>
+                <td>{{mov.income}}</td>
+                <td>{{mov.lenght}}</td>
+                <td>{{mov.releaseDate}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </section>

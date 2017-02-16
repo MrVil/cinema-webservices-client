@@ -17,7 +17,6 @@ export class MoviesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMovies();
-    console.log(this.movies);
   }
 
   getMovies() {
@@ -28,7 +27,6 @@ export class MoviesComponent implements OnInit {
   }
 
   delete_btn_clicked(event: Movie) {
-    // console.log(event);
     console.log(this.movieService.deleteMovie(event));
     // window.location.reload();
   }
