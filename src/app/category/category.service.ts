@@ -21,6 +21,12 @@ export class CategoryService {
                     .catch(this.handleError);
   }
 
+  getCategory (id: number): Observable<Category> {
+    return this.http.get(this.categoriesUrl + '/' + id)
+                    .map(res => res.json())
+                    .catch(this.handleError);
+  }
+
   create(category: Category): Observable<Category> {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
@@ -32,13 +38,21 @@ export class CategoryService {
 
   delete(link: string): Observable<Category> {
     return this.http.delete(link)
-                    .map(this.extractData)
+                    .map(res => res.json())
                     .catch(this.handleError);
   }
 
   private extractData(res: Response) {
-    let body = res.json();
-    return body._embedded.Category || { };
+    var body = res.json();
+    var cats: Category[] = [];
+    if (body._embedded.Category) {
+      for (let c of body._embedded.Category){
+        let cat: Category = new Category(c.labelCat);
+        cat._links = c._links;
+        cats.push(cat);
+      }
+    }
+    return cats || { };
   }
 
   private handleError (error: Response | any) {

@@ -1,15 +1,18 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Category} from './category';
 import {CategoryService} from './category.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Params} from '@angular/router';
+import {Location} from '@angular/common';
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'fountain-category',
-  template: require('./category.html')
+  template: require('./category.html'),
+  providers: [CategoryService]
 })
 
 export class CategoryComponent implements OnInit {
-  @Input() category: Category;
+  category: Category = new Category('');
 
   constructor(
     private categoryService: CategoryService,
@@ -18,9 +21,10 @@ export class CategoryComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.route.params
-    //     .switchMap((params: Params) => this.categoryService.getCategory(+params['id']))
-    //     .subscribe(category => this.category = category)
+    this.route.params
+        // tslint:disable-next-line:no-string-literal
+        .switchMap((params: Params) => this.categoryService.getCategory(+params['id']))
+        .subscribe(category => this.category = category);
 
   }
 }

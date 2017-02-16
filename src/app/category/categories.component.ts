@@ -11,20 +11,19 @@ import {CategoryService} from './category.service';
 export class CategoriesComponent implements OnInit {
   categories: Category[] = [];
   errorMessage: string;
-  mode = 'Observable';
 
   constructor(private categoryService: CategoryService) {}
 
   ngOnInit(): void {
     this.getCategories();
-    console.log(this.categories);
+    console.log(new Category('').getId());
   }
 
   getCategories() {
     this.categoryService.getCategories()
-                     .subscribe(
-                       categories => this.onGet(categories),
-                       error =>  this.errorMessage = <any>error);
+                        .subscribe(
+                          categories => this.onGet(categories),
+                          error =>  this.errorMessage = <any>error);
   }
 
   onGet(data: any) {
@@ -46,8 +45,8 @@ export class CategoriesComponent implements OnInit {
     }
   }
 
-  onModify(i: number) {
-    location.href = 'categories/' + i;
+  onModify(category: Category) {
+    location.href = 'categories/' + category.getId();//+ category.getId();
   }
 
 }
