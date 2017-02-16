@@ -19,6 +19,7 @@ import {MovieComponent} from './movie/movie.component';
 import {CategoryService} from './category/category.service';
 import {ActorService} from './actor/actor.service';
 import {MovieService} from './movie/movie.service';
+import {CreateActorComponent} from "./actor/create-actor-component";
 
 @NgModule({
   imports: [
@@ -36,6 +37,7 @@ import {MovieService} from './movie/movie.service';
     CategoriesComponent,
     CategoryComponent,
     CreateCategoryComponent,
+    CreateActorComponent,
     ActorsComponent,
     ActorComponent,
     MoviesComponent,
