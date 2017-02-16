@@ -46,7 +46,7 @@ export class CategoriesComponent implements OnInit {
   }
 
   onModify(category: Category) {
-    location.href = 'categories/' + category.getId();//+ category.getId();
+    location.href = 'categories/' + category.getId();
   }
 
 }

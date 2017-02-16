@@ -27,4 +27,19 @@ export class CategoryComponent implements OnInit {
         .subscribe(category => this.category = category);
 
   }
+
+  onSaveClicked() {
+    this.categoryService.modify(this.category).subscribe(
+      category  => this.onCategoryModified(category),
+      error =>  this.onCreationError(error));
+  }
+
+  onCategoryModified(category: Category){
+    window.location.href = '/categories';
+  }
+
+  onCreationError(error: any) {
+    window.location.href = '/categories';
+  }
+
 }
