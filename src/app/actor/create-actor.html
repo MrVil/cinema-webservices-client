@@ -1,0 +1,26 @@
+<section class="container">
+  <div class="row">
+    <h1 class="text-center mvs-header">Create an actor</h1>
+    <br>
+    <div class="input-group">
+      <p>
+        <span class="input-group-addon">Actor FirstName</span>
+        <input type="text" class="form-control" [(ngModel)]="actor.firstNameAct">
+      </p>
+      <p>
+        <span class="input-group-addon">Actor LastName</span>
+        <input type="text" class="form-control" [(ngModel)]="actor.lastNameAct">
+      </p>
+      <p>
+        <span class="input-group-addon">Actor Birth Date</span>
+        <input type="text" class="form-control" [(ngModel)]="actor.birthDate">
+      </p>
+      <p>
+        <span class="input-group-addon">Actor Death Date</span>
+        <input type="text" class="form-control" [(ngModel)]="actor.deathDate">
+      </p>
+      </div>
+    <br>
+    <button type="button" class="btn btn-primary text-center" (click)="onCreateClicked()">Create !</button>
+  </div>
+</section>

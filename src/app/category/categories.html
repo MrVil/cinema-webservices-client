@@ -1,9 +1,21 @@
 <section class="container">
   <h1 class="text-center mvs-header">Categories</h1>
-  <article [hidden]="(categories.length > 0)">There is currently no categories</article>
-  <article *ngFor="let cat of categories; let i = index" class="item-cat hvr-grow-shadow">
-    <a href="categories/{{i}}" data-toggle="modal" data-target="horror" class="text-center">
-      <h2>{{cat.labelCat}}</h2>
-    </a>
-  </article>
+  <br>
+  <article class="alert alert-danger" [hidden]="(categories.length > 0)">There is currently no categories</article>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Modify</th>
+        <th>Erase</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cat of categories; let i = index">
+        <td>{{cat.labelCat}}</td>
+        <td><button class="btn btn-primary" (click)="onModify(i + 1)"><span class="fa fa-pencil"></span></button></td>
+        <td><button class="btn btn-danger" (click)="onDelete(cat)"><span class="fa fa-eraser"></span></button></td>
+      </tr>
+    </tbody>
+  </table>
 </section>
