@@ -9,6 +9,7 @@ import {CategoryComponent} from './category/category.component';
 import {CreateCategoryComponent} from './category/create-category.component';
 import {ActorsComponent} from './actor/actors.component';
 import {MoviesComponent} from './movie/movies.component';
+import {MovieComponent} from './movie/movie.component';
 import {CreateActorComponent} from './actor/create-actor-component';
 
 @Component({
@@ -33,6 +34,9 @@ export const routes: Routes = [
   }, {
     path: 'movies',
     component: MoviesComponent
+  }, {
+    path: 'movies/:id',
+    component: MovieComponent
   }, {
     path: 'actors',
     component: ActorsComponent

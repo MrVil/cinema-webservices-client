@@ -1,4 +1,3 @@
-
 export class Category {
   public labelCat: string;
   public _links: {

@@ -3,6 +3,7 @@ import {Observable} from 'rxjs/Observable';
 
 import { Injectable }              from '@angular/core';
 import { Http, Response }          from '@angular/http';
+import { Headers, RequestOptions } from '@angular/http';
 
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -20,16 +21,47 @@ export class MovieService {
                     .catch(this.handleError);
   }
 
+
+    getMovie (id: number): Observable<Movie> {
+      return this.http.get(this.moviesUrl + '/' + id)
+                      .map(res => res.json())
+                      .catch(this.handleError);
+    }
+
+    create(movie: Movie): Observable<Movie> {
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+      let options = new RequestOptions({ headers: headers });
+
+      return this.http.post(this.moviesUrl, JSON.stringify(movie), options)
+                      .map(res => res.json())
+                      .catch(this.handleError);
+    }
+
+    modify(movie: Movie): Observable<Movie> {
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+      let options = new RequestOptions({ headers: headers });
+
+      return this.http.put(movie._links.self.href, JSON.stringify(movie), options)
+                      .map(res => res.json())
+                      .catch(this.handleError);
+    }
+
   deleteMovie (mov: Movie) {
       console.log(mov._links.self.href);
       return this.http.delete(mov._links.self.href).subscribe((res) =>{});
   }
 
   private extractData(res: Response) {
-    let body = res.json();
-    console.log(res);
-    console.log(body);
-    return body._embedded.Movie || { };
+    var body = res.json();
+    var movs: Movie[] = [];
+    if (body._embedded.Movie) {
+      for (let m of body._embedded.Movie){
+        let mov: Movie = new Movie(m.title, m.budget, m.income, m.length, m.releaseDate, m.category);
+        mov._links = m._links;
+        movs.push(mov);
+      }
+    }
+    return movs || { };
   }
 
   private handleError (error: Response | any) {
