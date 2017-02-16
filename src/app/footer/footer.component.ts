@@ -1,9 +1,7 @@
 import {Component} from '@angular/core';
 
 @Component({
-  selector: 'footer',
+  selector: 'fountain-footer',
   template: require('./footer.html')
 })
-export class FooterComponent {
-  constructor() {}
-}
+export class FooterComponent {}

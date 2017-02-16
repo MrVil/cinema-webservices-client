@@ -10,7 +10,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class MovieService {
 
-  private moviesUrl = 'http://localhost:8080/api/movie';  // URL to web API
+  private moviesUrl = 'http://localhost:8080/api/movie';  // url to web API
 
   constructor (private http: Http) {}
 
@@ -33,7 +33,7 @@ export class MovieService {
   }
 
   private handleError (error: Response | any) {
-    // In a real world app, we might use a remote logging infrastructure
+    // in a real world app, we might use a remote logging infrastructure
     let errMsg: string;
 
     if (error instanceof Response) {

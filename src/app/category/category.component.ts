@@ -1,10 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Category} from './category';
 import {CategoryService} from './category.service';
-import {ActivatedRoute, Params} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
-  selector: 'category',
+  selector: 'fountain-category',
   template: require('./category.html')
 })
 

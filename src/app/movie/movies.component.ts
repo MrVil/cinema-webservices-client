@@ -3,7 +3,7 @@ import {Movie} from './movie';
 import {MovieService} from './movie.service';
 
 @Component({
-  selector: 'movies',
+  selector: 'fountain-movies',
   template: require('./movies.html'),
   providers: [MovieService]
 })
@@ -27,9 +27,9 @@ export class MoviesComponent implements OnInit {
       error => this.errorMessage = <any>error);
   }
 
-  delete_btn_clicked(event) {
-    //console.log(event);
+  delete_btn_clicked(event: Movie) {
+    // console.log(event);
     console.log(this.movieService.deleteMovie(event));
-    //window.location.reload();
+    // window.location.reload();
   }
 }

@@ -12,7 +12,7 @@ import {MoviesComponent} from './movie/movies.component';
 
 @Component({
   selector: 'fountain-root',
-  template: '<router-outlet></router-outlet>'
+  template: '<fountain-navbar></fountain-navbar><router-outlet></router-outlet>'
 })
 export class RootComponent {}
 
