@@ -15,6 +15,12 @@ export class MovieService {
 
   constructor (private http: Http) {}
 
+  getMoviesByUrl (url: string): Observable<Movie[]> {
+    return this.http.get(url)
+                    .map(this.extractData)
+                    .catch(this.handleError);
+  }
+
   getMovies (): Observable<Movie[]> {
     return this.http.get(this.moviesUrl)
                     .map(this.extractData)
@@ -47,7 +53,6 @@ export class MovieService {
     }
 
   deleteMovie (mov: Movie) {
-      console.log(mov._links.self.href);
       return this.http.delete(mov._links.self.href).subscribe((res) =>{});
   }
 
