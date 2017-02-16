@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {Movie} from './movie';
 import {MovieService} from './movie.service';
 
@@ -9,6 +9,7 @@ import {MovieService} from './movie.service';
 })
 
 export class MovieComponent implements OnInit {
+  @Input() movie: Movie;
   movies: Movie[] = [];
   errorMessage: string;
   mode = 'Observable';
