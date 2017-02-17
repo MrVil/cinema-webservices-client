@@ -13,24 +13,25 @@ import {Category} from '../category/category'
 })
 
 export class MovieComponent implements OnInit {
-  movie: Movie = new Movie('', 0, 0, 0, ' ', new Category(' '));
+  movie: Movie = new Movie(' ', 0, 0, 0, ' ', new Category(' '));
 
   constructor(private movieService: MovieService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.movie = new Movie(' ', 0, 0, 0, ' ', new Category(' '));
     this.route.params
-        // tslint:disable-next-line:no-string-literal
-        .switchMap((params: Params) => this.movieService.getMovie(+params['id']))
-        .subscribe(movie => this.movie = movie);
+      // tslint:disable-next-line:no-string-literal
+      .switchMap((params: Params) => this.movieService.getMovie(+params['id']))
+      .subscribe(movie => this.movie = movie);
   }
 
   onSaveClicked() {
     this.movieService.modify(this.movie).subscribe(
-      movie  => this.onMovieModified(movie),
-      error =>  this.onCreationError(error));
+      movie => this.onMovieModified(movie),
+      error => this.onCreationError(error));
   }
 
-  onMovieModified(movie: Movie){
+  onMovieModified(movie: Movie) {
     window.location.href = '/movies';
   }
 
