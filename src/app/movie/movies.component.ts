@@ -30,4 +30,8 @@ export class MoviesComponent implements OnInit {
     console.log(this.movieService.deleteMovie(event));
     // window.location.reload();
   }
+
+  onModify(movie: Movie) {
+    location.href = 'movies/' + movie.getId();
+  }
 }

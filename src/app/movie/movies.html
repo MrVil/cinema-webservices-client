@@ -10,9 +10,9 @@
     </thead>
     <tbody>
       <tr *ngFor="let mov of movies; let i = index">
-        <td><a href="movie/{{mov}}">{{mov.title}}</a></td>
-        <td><button class="btn btn-primary"><span class="fa fa-pencil"></span></button></td>
-        <td><button class="btn btn-danger" (click)="delete_btn_clicked(mov)"><span class="fa fa-eraser"></span></button></td>
+          <td>{{mov.title}}</td>
+          <td><button class="btn btn-primary" (click)="onModify(mov)"><span class="fa fa-pencil"></span></button></td>
+          <td><button class="btn btn-danger" (click)="delete_btn_clicked(mov)"><span class="fa fa-eraser"></span></button></td>
         <!--<movie [item]="mov"></movie>-->
       </tr>
     </tbody>

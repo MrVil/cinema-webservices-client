@@ -1,11 +1,33 @@
-<article class="item-mov hvr-grow-shadow">
-  <a href="#" data-toggle="modal" data-target="horror">
-    <h2>{{item.title}}</h2>
-    <h2>{{item.id}}</h2>
-    <h2>{{item.budget}}</h2>
-    <h2>{{item.income}}</h2>
-    <h2>{{item.length}}</h2>
-    <h2>{{item.releaseDate}}</h2>
-    <h2>{{item.category}}</h2>
-  </a>
-</article>
+<section class="container">
+    <div class="row">
+        <h1 class="text-center mvs-header">Modification !</h1>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon">Movie's title</span>
+            <input type="text" class="form-control" [(ngModel)]="movie.title">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">Movie's budget</span>
+            <input type="number" class="form-control" [(ngModel)]="movie.budget">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">Movie's income</span>
+            <input type="number" class="form-control" [(ngModel)]="movie.income">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">Movie's duration</span>
+            <input type="number" class="form-control" [(ngModel)]="movie.length">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">Movie's release date</span>
+            <input type="text" class="form-control" [(ngModel)]="movie.releaseDate">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">Movie's category</span>
+            <input type="text" class="form-control" [(ngModel)]="movie.category">
+        </div>
+        <br>
+        <button type="button" class="btn btn-primary text-center" (click)="onSaveClicked()">Save !</button>
+    </div>
+    <br>
+</section>
