@@ -22,8 +22,6 @@ export class ActorsComponent {
   }
 
   removeActor(act: Actor) {
-    console.log(act);
-    console.log(this.actorService.deleteActor(act));
     window.location.reload();
   }
 }

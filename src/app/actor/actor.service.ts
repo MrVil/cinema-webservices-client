@@ -31,7 +31,6 @@ export class ActorService {
   }
 
   create(actor: Actor): Observable<Actor> {
-    console.log('Service called !');
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
@@ -41,14 +40,11 @@ export class ActorService {
   }
 
   deleteActor (act: Actor) {
-    console.log(`${act._links.self.href}`);
     return this.http.delete(`${act._links.self.href}`).subscribe((res) =>{});
   }
 
   private extractData(res: Response) {
     let body = res.json();
-    console.log(res);
-    console.log(body);
     return body._embedded.Actor || { };
   }
 

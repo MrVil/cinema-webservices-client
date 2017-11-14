@@ -16,7 +16,6 @@ export class CategoriesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCategories();
-    console.log(new Category('').getId());
   }
 
   getCategories() {
@@ -27,7 +26,6 @@ export class CategoriesComponent implements OnInit {
   }
 
   onGet(data: any) {
-    console.log(data);
     this.categories = data;
   }
 
